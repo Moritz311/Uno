@@ -1,15 +1,84 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "ShaderGraphEditorPluginID",
   "openSceneRelativePaths" : [
-    "UnoCard.usda"
+
   ],
   "recentIdentifiers" : {
+    "1FD9B265-9656-48AB-8E6B-EFBA95740DB3" : [
+
+    ],
     "AF09ED6F-1707-48FD-8720-65B998362C09" : [
 
     ]
   },
   "sceneCameraHistory" : {
     "1FD9B265-9656-48AB-8E6B-EFBA95740DB3" : [
+      {
+        "date" : 786032058.634894,
+        "title" : "Untitled",
+        "transform" : [
+          0.99976236,
+          -0.012907094,
+          -0.017564101,
+          0,
+          -0.017109122,
+          0.034553215,
+          -0.9992564,
+          0,
+          0.013504393,
+          0.99931943,
+          0.034324206,
+          0,
+          0.0045867544,
+          0.38293737,
+          0.015677111,
+          1
+        ]
+      },
+      {
+        "date" : 786032044.064189,
+        "title" : "Untitled",
+        "transform" : [
+          0.99976236,
+          -0.012907096,
+          -0.017564101,
+          0,
+          -0.017109124,
+          0.034553215,
+          -0.9992564,
+          0,
+          0.013504394,
+          0.99931943,
+          0.034324206,
+          0,
+          0.0045866966,
+          0.38293755,
+          0.015677094,
+          1
+        ]
+      },
+      {
+        "date" : 786028127.92431,
+        "title" : "Untitled",
+        "transform" : [
+          0.9997623,
+          -0.012907096,
+          -0.017564101,
+          0,
+          -0.017109126,
+          0.03455316,
+          -0.9992564,
+          0,
+          0.013504394,
+          0.9993195,
+          0.034324102,
+          0,
+          -0.023866158,
+          0.99766916,
+          0.29735535,
+          1
+        ]
+      },
       {
         "date" : 786016819.267881,
         "title" : "Untitled",
@@ -258,6 +327,5 @@
   },
   "sceneViewportBackgroundColors" : {
 
-  },
-  "selectedSceneRelativePath" : "UnoCard.usda"
+  }
 }

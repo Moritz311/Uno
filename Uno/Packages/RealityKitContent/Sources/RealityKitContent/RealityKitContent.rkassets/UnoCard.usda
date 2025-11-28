@@ -7,20 +7,620 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["GridMaterial", "UnoCard"]
+    reorder nameChildren = ["GridMaterial", "UnoCard", "one", "three", "four", "five", "six", "seven", "eight", "zero", "nine", "two"]
     def "GridMaterial" (
         active = true
         references = @Materials/GridMaterial.usda@
     )
     {
+        reorder nameChildren = ["GridMaterial", "one", "three", "four", "five", "six", "seven", "eight", "zero", "nine", "two"]
         float3 xformOp:scale = (1, 1, 1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Material "one"
+        {
+            asset inputs:Imagefile = @one.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 140
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/one/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = </Root/GridMaterial/one/UsdPreviewSurface.outputs:surface>
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/one/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/one.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "three"
+        {
+            asset inputs:Imagefile = @three.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 141
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/three/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (980.60474, 56.059555)
+            int ui:nodegraph:node:stackingOrder = 1
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/three/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/three.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "four"
+        {
+            asset inputs:Imagefile = @four.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 141
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/four/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (1000.60474, 76.059555)
+            int ui:nodegraph:node:stackingOrder = 2
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/four/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/four.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "five"
+        {
+            asset inputs:Imagefile = @five.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 141
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/five/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (980.60474, 56.059555)
+            int ui:nodegraph:node:stackingOrder = 1
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/five/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/five.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "six"
+        {
+            asset inputs:Imagefile = @six.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 142
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/six/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (1000.60474, 76.059555)
+            int ui:nodegraph:node:stackingOrder = 2
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/six/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/six.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "seven"
+        {
+            asset inputs:Imagefile = @seven.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 144
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/seven/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (1020.60474, 96.059555)
+            int ui:nodegraph:node:stackingOrder = 3
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/seven/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/seven.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "eight"
+        {
+            asset inputs:Imagefile = @eight.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 141
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/eight/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (1000.60474, 76.059555)
+            int ui:nodegraph:node:stackingOrder = 2
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/eight/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/eight.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "zero"
+        {
+            asset inputs:Imagefile = @zero.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 140
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/zero/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (980.60474, 56.059555)
+            int ui:nodegraph:node:stackingOrder = 1
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/zero/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/zero.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "nine"
+        {
+            asset inputs:Imagefile = @nine.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 140
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/nine/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (1000.60474, 76.059555)
+            int ui:nodegraph:node:stackingOrder = 2
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/nine/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/nine.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
+
+        def Material "two"
+        {
+            asset inputs:Imagefile = @two.png@ (
+                customData = {
+                    dictionary realitykit = {
+                        float2 positionInSubgraph = (516.022, 13.85368)
+                        int stackingOrderInSubgraph = 141
+                    }
+                }
+            )
+            token outputs:mtlx:surface.connect = </Root/GridMaterial/two/PreviewSurface.outputs:out>
+            token outputs:realitykit:vertex
+            token outputs:surface.connect = None
+            float2 ui:nodegraph:node:pos = (980.60474, 56.059555)
+            int ui:nodegraph:node:stackingOrder = 1
+            float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (1411.6875, 60.027344)
+            int ui:nodegraph:realitykit:subgraphOutputs:stackingOrder = 140
+
+            def Shader "UsdPreviewSurface" (
+                active = false
+            )
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                token outputs:surface
+            }
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat
+                float inputs:clearcoatRoughness
+                color3f inputs:diffuseColor.connect = </Root/GridMaterial/two/Image.outputs:out>
+                color3f inputs:emissiveColor
+                float inputs:ior
+                float inputs:metallic
+                float3 inputs:normal
+                float inputs:occlusion
+                float inputs:opacity
+                float inputs:opacityThreshold
+                float inputs:roughness
+                token outputs:out
+                float2 ui:nodegraph:node:pos = (1055.3352, 60.54489)
+                int ui:nodegraph:node:stackingOrder = 140
+                string[] ui:nodegraph:realitykit:node:attributesShowingChildren = []
+            }
+
+            def Shader "Image"
+            {
+                uniform token info:id = "ND_image_color3"
+                asset inputs:file.connect = </Root/GridMaterial/two.inputs:Imagefile>
+                string inputs:filtertype
+                float2 inputs:texcoord
+                string inputs:uaddressmode
+                string inputs:vaddressmode
+                color3f outputs:out
+                float2 ui:nodegraph:node:pos = (766.5078, 43.57422)
+                int ui:nodegraph:node:stackingOrder = 140
+            }
+        }
     }
 
     def Xform "UnoCard" (
         active = true
     )
     {
+        reorder nameChildren = ["Cube", "Cube_1", "Cylinder", "Collider", "InputTarget", "one", "three", "four", "five", "six", "seven", "eight", "zero", "nine", "two"]
         def Cube "Cube" (
             active = true
             prepend apiSchemas = ["MaterialBindingAPI"]
@@ -123,9 +723,12 @@ def Xform "Root"
             prepend apiSchemas = ["MaterialBindingAPI"]
         )
         {
+            reorder nameChildren = ["DefaultMaterial", "one", "three", "four", "five", "six", "seven", "eight", "zero", "nine", "two"]
             uniform token axis = "Y"
             double height = 0.2
-            rel material:binding = </Root/UnoCard/Cylinder/DefaultMaterial>
+            rel material:binding = </Root/GridMaterial/five> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
             double radius = 0.1
             quatf xformOp:orient = (1, 0, 0, 0)
             float3 xformOp:scale = (0.79999995, 0.001, 0.79999995)
@@ -134,13 +737,14 @@ def Xform "Root"
 
             def Material "DefaultMaterial"
             {
+                reorder nameChildren = ["DefaultSurfaceShader", "PreviewSurface"]
                 token outputs:mtlx:surface.connect = </Root/UnoCard/Cylinder/DefaultMaterial/PreviewSurface.outputs:out>
                 token outputs:realitykit:vertex
                 token outputs:surface.connect = </Root/UnoCard/Cylinder/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
                 float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 113)
 
                 def Shader "DefaultSurfaceShader" (
-                    active = false
+                    active = true
                 )
                 {
                     uniform token info:id = "UsdPreviewSurface"
@@ -149,27 +753,17 @@ def Xform "Root"
                     token outputs:surface
                 }
 
-                def Shader "PreviewSurface"
+                def Shader "PreviewSurface" (
+                    active = false
+                )
                 {
                     uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
-                    color3f inputs:diffuseColor.connect = </Root/UnoCard/Cylinder/DefaultMaterial/Image.outputs:out>
+                    color3f inputs:diffuseColor
                     float inputs:metallic
                     float inputs:roughness
                     token outputs:out
-                    float2 ui:nodegraph:node:pos = (-255, 105)
-                }
-
-                def Shader "Image"
-                {
-                    uniform token info:id = "ND_image_color3"
-                    color3f inputs:default = (0.999996, 1, 1) (
-                        colorSpace = "srgb_texture"
-                    )
-                    asset inputs:file = @Solid_white_bordered.png@
-                    string inputs:filtertype = "linear"
-                    color3f outputs:out
-                    float2 ui:nodegraph:node:pos = (-541.59375, 5.703125)
-                    int ui:nodegraph:node:stackingOrder = 18
+                    float2 ui:nodegraph:node:pos = (-412.96725, 52.725758)
+                    int ui:nodegraph:node:stackingOrder = 4
                 }
             }
         }

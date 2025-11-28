@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "686314FF-391A-4566-99F5-F4187F57D3F6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A425DCD6-A870-4CE5-BB11-D9B92390BD93"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Uno/ImmersiveView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A425DCD6-A870-4CE5-BB11-D9B92390BD93 - 22ffcfdf3cfdb053"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Uno.ImmersiveView.body.getter : some"
+                  moduleName = "Uno.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s2310237015/Documents/Uno/Uno/Uno/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "A425DCD6-A870-4CE5-BB11-D9B92390BD93 - c66b75a503247451"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Uno.ImmersiveView.body.getter : some"
+                  moduleName = "Uno.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s2310237015/Documents/Uno/Uno/Uno/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "A425DCD6-A870-4CE5-BB11-D9B92390BD93 - 55a14e4e1e30ca6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Uno.ImmersiveView.body.getter : some"
+                  moduleName = "Uno.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s2310237015/Documents/Uno/Uno/Uno/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+               <Location
+                  uuid = "A425DCD6-A870-4CE5-BB11-D9B92390BD93 - ebd71b6be90b286f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in Uno.ImmersiveView.body.getter : some"
+                  moduleName = "Uno.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s2310237015/Documents/Uno/Uno/Uno/ImmersiveView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
