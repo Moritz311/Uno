@@ -5,7 +5,9 @@
 //  Created by Schuetz Moritz - s2310237015 on 21.11.25.
 //
 
+
 import SwiftUI
+import Observation   // ← add this
 
 /// Maintains app-wide state
 @MainActor
