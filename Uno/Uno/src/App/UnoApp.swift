@@ -22,6 +22,7 @@ struct UnoApp: App {
             ImmersiveView()
                 .environment(appModel)
         }
+        .upperLimbVisibility(.hidden)
         .immersionStyle(selection: .constant(.mixed), in: .mixed)
     }
 }

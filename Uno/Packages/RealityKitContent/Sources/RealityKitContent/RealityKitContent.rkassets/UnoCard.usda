@@ -21,13 +21,16 @@ def Xform "Root"
         active = true
     )
     {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
         def Cube "Cube" (
             active = true
             prepend apiSchemas = ["MaterialBindingAPI"]
         )
         {
             rel material:binding = </Root/UnoCard/Cube/DefaultMaterial>
-            double size = 0.2
+            double size = 0.1
             quatf xformOp:orient = (1, 0, 0, 0)
             float3 xformOp:scale = (1, 0.01, 1.5)
             float3 xformOp:translate = (0, 0, 0)
@@ -82,7 +85,7 @@ def Xform "Root"
         )
         {
             rel material:binding = </Root/UnoCard/Cube_1/DefaultMaterial>
-            double size = 0.2
+            double size = 0.1
             quatf xformOp:orient = (1, 0, 0, 0)
             float3 xformOp:scale = (0.9, 0.01, 1.4)
             float3 xformOp:translate = (0, 0.0001, 0)
@@ -124,9 +127,9 @@ def Xform "Root"
         )
         {
             uniform token axis = "Y"
-            double height = 0.2
+            double height = 0.1
             rel material:binding = </Root/UnoCard/Cylinder/DefaultMaterial>
-            double radius = 0.1
+            double radius = 0.05
             quatf xformOp:orient = (1, 0, 0, 0)
             float3 xformOp:scale = (0.79999995, 0.001, 0.79999995)
             float3 xformOp:translate = (0, 0.002, 0)

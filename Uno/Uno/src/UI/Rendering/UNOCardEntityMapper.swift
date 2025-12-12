@@ -14,6 +14,11 @@ final class UnoCardEntityMapper {
     func makeEntitySync(for card: UnoCard) throws -> Entity {
 
         let entity = try EntityPool.shared.makeCardEntitySync()
+        
+        var manipulationComponent = ManipulationComponent()
+        manipulationComponent.releaseBehavior = .stay
+        manipulationComponent.dynamics.scalingBehavior = .none
+        entity.components.set(manipulationComponent)
 
         // ------------------------------------------
         // 1) Hintergrund einfärben
@@ -23,6 +28,7 @@ final class UnoCardEntityMapper {
         {
             let material = SimpleMaterial(
                 color: card.color.uiColor(),
+                roughness: 0.9,
                 isMetallic: false
             )
             model.materials = [material]
@@ -34,9 +40,11 @@ final class UnoCardEntityMapper {
         if let symbol = entity.findEntity(named: "usdPrimitiveAxis"),
            var model = symbol.components[ModelComponent.self]
         {
-            let matName = card.materialName() + ".png"
+            let matName = card.materialName()
 
-            if let texture = try? TextureResource.load(named: matName, in: realityKitContentBundle) {
+            if let image = UIImage(named: matName)!.cgImage,
+               let texture = try? TextureResource(image: image, options: .init(semantic: .hdrColor)) {
+                
 
                 var unlit = UnlitMaterial()
 
@@ -56,7 +64,6 @@ final class UnoCardEntityMapper {
         // ------------------------------------------
         // 3) Skalierung & Name
         // ------------------------------------------
-        entity.scale = [0.15, 0.15, 0.15]
         entity.name = card.id.uuidString
 
         return entity

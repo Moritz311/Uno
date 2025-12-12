@@ -8,6 +8,7 @@
 import Foundation
 import RealityKit
 import _RealityKit_SwiftUI
+import TabletopKit
 
 /// Verwaltet die Darstellung der Karten im 3D-Raum
 final class CardRenderer {
@@ -42,6 +43,7 @@ final class CardRenderer {
                 content.add(entity)
                 handEntities[card.id] = entity
 
+                //Make a rectangular table
             } catch {
                 print("❌ Fehler beim Erstellen einer Karten-Entity:", error)
             }
@@ -58,7 +60,7 @@ final class CardRenderer {
                 let entity = try mapper.makeEntitySync(for: card)
 
                 let xOffset = Float(index) * 0.14 - 0.45
-                entity.position = [xOffset, -0.25, -1.0]
+                entity.position = [xOffset, 0.5, -1.0]
 
                 content.add(entity)
                 handEntities[card.id] = entity

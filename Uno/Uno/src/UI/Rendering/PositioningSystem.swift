@@ -15,7 +15,7 @@ struct PositioningSystem {
     static func positionForHandCard(index: Int, total: Int) -> SIMD3<Float> {
         guard total > 0 else { return [0, 0, -1] }
 
-        let spread: Float = 0.12   // Abstand zwischen Karten
+        let spread: Float = 0.01   // Abstand zwischen Karten
         let centerOffset = Float(total - 1) / 2.0
         let x = (Float(index) - centerOffset) * spread
         let y: Float = -0.1
