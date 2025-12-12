@@ -41,7 +41,7 @@ Die App kombiniert VisionOS-Interaktionen, Spatial Computing und ein digitales U
 ## 🏗 Technologien
 - **visionOS / RealityKit**
 - **SwiftUI**
-- **TableTopKit** (für Kartendarstellung)
+- **TableTopKit** (für Kartendarstellung) -- https://developer.apple.com/documentation/tabletopkit/creating-tabletop-games
 - **HandTracking & Gesture Recognition**
 - **Spatial Anchors / 3D UI Layouts**
 
