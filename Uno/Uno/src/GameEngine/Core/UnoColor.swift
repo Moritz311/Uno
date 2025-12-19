@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+internal import UIKit
 
 /// Farben im UNO-Spiel
 public enum UnoColor: String, Codable, CaseIterable {

@@ -2,39 +2,82 @@
 //  ImmersiveView.swift
 //  Uno
 //
-//  Created by Schuetz Moritz - s2310237015 on 21.11.25.
-//
+
 import SwiftUI
 import RealityKit
 import RealityKitContent
+import TabletopKit
 
 struct ImmersiveView: View {
 
     @StateObject private var game = UnoGame()
     private let renderer = CardRenderer()
 
-    var body: some View {
-        ZStack {
-            RealityView { content in
-                renderInitial(in: content)
-            }
-            .ignoresSafeArea()
+    @State private var tabletopGame: TabletopGame?
+    @State private var tabletopSetup: TabletopSetup?
+    @State private var didInitialize = false
 
-            GameHUD(
-                game: game,
-                onDraw: { game.send(.drawCard) },
-                onPass: { game.send(.pass) },
-                onCallUno: { game.send(.callUno) }
-            )
+    var body: some View {
+        RealityView { content, attachments in
+            renderInitial(in: content)
+
+            
+            if let hudEntity = attachments.entity(for: "hud") {
+
+                // Position relativ zum Tisch:
+                // +Z = Richtung Spieler
+                hudEntity.position = [0, 1.0, -1.0]
+
+                // Leicht zum Spieler neigen
+                hudEntity.orientation =
+                    simd_quatf(angle: -.pi / 10, axis: [1, 0, 0])
+
+                content.add(hudEntity)
+            }
+
+        } attachments: {
+
+            Attachment(id: "hud") {
+                GameHUD(
+                    game: game,
+                    onDraw: { game.send(.drawCard) },
+                    onPass: { game.send(.pass) },
+                    onCallUno: { game.send(.callUno) }
+                )
+                .frame(width: 520, height: 220)
+                .glassBackgroundEffect()
+            }
         }
+        .ignoresSafeArea()
     }
 
+    //Setup
     private func renderInitial(in content: RealityViewContent) {
-        guard let idx = game.state.players.firstIndex(where: { $0.id == game.localPlayerID }) else {
-            return
+
+        guard !didInitialize else { return }
+        didInitialize = true
+
+        // Tabletop
+        let setup = TabletopSetup(content: content)
+        let tabletop = TabletopGame(tableSetup: setup.tableSetup)
+        tabletop.claimAnySeat()
+
+        tabletopSetup = setup
+        tabletopGame = tabletop
+
+        // Handkarten
+        if let idx = game.state.players.firstIndex(where: {
+            $0.id == game.localPlayerID
+        }) {
+            let hand = game.state.players[idx].hand
+            renderer.renderInitialSync(cards: hand, into: content)
         }
 
-        let hand = game.state.players[idx].hand
-        renderer.renderInitialSync(cards: hand, into: content)
+        // Abhebestapel
+        let drawPileRenderer = DrawPileRenderer()
+        drawPileRenderer.setup(
+            cards: game.state.drawPile,
+            into: content
+        )
     }
 }

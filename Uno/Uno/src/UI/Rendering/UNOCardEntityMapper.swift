@@ -1,7 +1,7 @@
 import Foundation
 import RealityKit
 import RealityKitContent
-import UIKit
+internal import UIKit
 
 final class UnoCardEntityMapper {
 
@@ -98,6 +98,7 @@ extension UnoCard {
         case 7: return "seven"
         case 8: return "eight"
         case 9: return "nine"
+            
         default: return "zero"
         }
     }
