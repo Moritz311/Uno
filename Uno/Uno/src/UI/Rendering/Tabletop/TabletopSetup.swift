@@ -62,8 +62,8 @@ final class TabletopSetup {
 
         tableRoot.position = SIMD3(
             x: 0.0,
-            y: 0.5 - tableTopThickness / 2 - 0.01, // knapp unter Karten
-            z: -1.0
+            y: 0.5 - tableTopThickness / 2 - 0.02, // knapp unter Karten
+            z: -1.3
         )
 
         
