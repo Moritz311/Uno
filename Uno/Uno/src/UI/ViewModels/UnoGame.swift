@@ -40,8 +40,6 @@ final class UnoGame: ObservableObject {
         }
     }
 
-    /// Wird von InteractionHandlers aufgerufen, um eine Karte „zur Hand“ zurück zu setzen.
-    /// Aktuell: Nur Platzhalter, da Positionen von RealityKit gehandhabt werden.
     func returnCardToHand(id: UUID) {
         // Hier könntest du später UI-States für Kartenpositionen verwalten.
     }

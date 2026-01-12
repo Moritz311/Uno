@@ -84,7 +84,6 @@ final class DrawPileRenderer {
 
                 completion(drawnCard)
 
-                // 🔴 Stapel komplett leer → entfernen
                 if self.visibleEntities.isEmpty && self.remainingCards.isEmpty {
                     self.removeDrawPile()
                     return
@@ -101,7 +100,6 @@ final class DrawPileRenderer {
 
         let canRefill = !remainingCards.isEmpty
 
-        // 🔑 Nur rutschen, wenn unten auch wirklich eine neue Karte nachkommt
         if canRefill {
             for (index, entity) in visibleEntities.enumerated() {
                 animateMove(

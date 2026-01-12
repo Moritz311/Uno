@@ -12,6 +12,10 @@ import TabletopKit
 
 /// Verwaltet die Darstellung der Karten im 3D-Raum
 final class CardRenderer {
+    
+    func entity(for cardID: UUID) -> Entity? {
+        handEntities[cardID]
+    }
 
     private let mapper = UnoCardEntityMapper.shared
 
@@ -37,7 +41,6 @@ final class CardRenderer {
             do {
                 let entity = try mapper.makeEntitySync(for: card)
 
-                // ✅ Position kommt NUR vom PositioningSystem
                 entity.position = PositioningSystem.positionForHandCard(
                     index: index,
                     total: total
@@ -53,8 +56,11 @@ final class CardRenderer {
                 handEntities[card.id] = entity
 
             } catch {
-                print("❌ Fehler beim Karten-Rendern:", error)
+                print("Fehler beim Karten-Rendern:", error)
             }
         }
     }
+    
+
+
 }
