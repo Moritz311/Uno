@@ -21,13 +21,8 @@ struct UnoApp: App {
         ImmersiveSpace(id: appModel.immersiveSpaceID) {
             ImmersiveView()
                 .environment(appModel)
-                .onAppear {
-                    appModel.immersiveSpaceState = .open
-                }
-                .onDisappear {
-                    appModel.immersiveSpaceState = .closed
-                }
         }
+        .upperLimbVisibility(.hidden)
         .immersionStyle(selection: .constant(.mixed), in: .mixed)
     }
 }

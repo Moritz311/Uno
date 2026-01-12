@@ -1,0 +1,202 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["GridMaterial", "UnoCard"]
+    def "GridMaterial" (
+        active = true
+        references = @Materials/GridMaterial.usda@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def Xform "UnoCard" (
+        active = true
+    )
+    {
+        def Cube "Cube" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/UnoCard/Cube/DefaultMaterial>
+            double size = 0.2
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 0.01, 1.5)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface.connect = </Root/UnoCard/Cube/DefaultMaterial/PreviewSurface.outputs:out>
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/UnoCard/Cube/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 113)
+
+                def Shader "DefaultSurfaceShader" (
+                    active = false
+                )
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+
+                def Shader "PreviewSurface"
+                {
+                    uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                    color3f inputs:diffuseColor.connect = </Root/UnoCard/Cube/DefaultMaterial/Image.outputs:out>
+                    float inputs:metallic
+                    float inputs:roughness
+                    token outputs:out
+                    float2 ui:nodegraph:node:pos = (-248.90784, 197.86691)
+                    int ui:nodegraph:node:stackingOrder = 8
+                }
+
+                def Shader "Image"
+                {
+                    uniform token info:id = "ND_image_color3"
+                    color3f inputs:default = (1, 1, 1) (
+                        colorSpace = "lin_srgb"
+                    )
+                    asset inputs:file = @printable-uno-game-cards-28.png@
+                    string inputs:uaddressmode = "constant"
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-566.77576, 86.12524)
+                    int ui:nodegraph:node:stackingOrder = 10
+                }
+            }
+        }
+
+        def Cube "Cube_1" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/UnoCard/Cube_1/DefaultMaterial>
+            double size = 0.2
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.9, 0.01, 1.4)
+            float3 xformOp:translate = (0, 0.0001, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface.connect = </Root/UnoCard/Cube_1/DefaultMaterial/PreviewSurface.outputs:out>
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/UnoCard/Cube_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 113)
+
+                def Shader "DefaultSurfaceShader" (
+                    active = true
+                )
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 0.14913142, 0) (
+                        colorSpace = "srgb_texture"
+                    )
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+
+                def Shader "PreviewSurface" (
+                    active = false
+                )
+                {
+                    uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                    token outputs:out
+                    float2 ui:nodegraph:node:pos = (-255, 105)
+                }
+            }
+        }
+
+        def Cylinder "Cylinder" (
+            active = true
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            uniform token axis = "Y"
+            double height = 0.2
+            rel material:binding = </Root/UnoCard/Cylinder/DefaultMaterial>
+            double radius = 0.1
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.79999995, 0.001, 0.79999995)
+            float3 xformOp:translate = (0, 0.002, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def Material "DefaultMaterial"
+            {
+                token outputs:mtlx:surface.connect = </Root/UnoCard/Cylinder/DefaultMaterial/PreviewSurface.outputs:out>
+                token outputs:realitykit:vertex
+                token outputs:surface.connect = </Root/UnoCard/Cylinder/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+                float2 ui:nodegraph:realitykit:subgraphOutputs:pos = (0, 113)
+
+                def Shader "DefaultSurfaceShader" (
+                    active = false
+                )
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    color3f inputs:diffuseColor = (1, 1, 1)
+                    float inputs:roughness = 0.75
+                    token outputs:surface
+                }
+
+                def Shader "PreviewSurface"
+                {
+                    uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                    color3f inputs:diffuseColor.connect = </Root/UnoCard/Cylinder/DefaultMaterial/Image.outputs:out>
+                    float inputs:metallic
+                    float inputs:roughness
+                    token outputs:out
+                    float2 ui:nodegraph:node:pos = (-255, 105)
+                }
+
+                def Shader "Image"
+                {
+                    uniform token info:id = "ND_image_color3"
+                    color3f inputs:default = (0.999996, 1, 1) (
+                        colorSpace = "srgb_texture"
+                    )
+                    asset inputs:file = @Solid_white_bordered.png@
+                    string inputs:filtertype = "linear"
+                    color3f outputs:out
+                    float2 ui:nodegraph:node:pos = (-541.59375, 5.703125)
+                    int ui:nodegraph:node:stackingOrder = 18
+                }
+            }
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.2, 0.0031000003, 0.3)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0, 0.00055000006, 0)
+                }
+            }
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+    }
+}
+
